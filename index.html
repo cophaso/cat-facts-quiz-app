@@ -6,27 +6,37 @@
     <title>Cat Facts Quiz App</title>
     <meta name="description" content="A quizz that tests your knowledge of cats">
     <link href="index.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
   </head>
   <body>
     <header role="banner">
-    <div class="col-4">
-      <a href="index.html">
-      <img class="logo" src="images/Cat-logo.png" alt="Cat Head Logo"/>
-      </a>
-    </div>
-    <div class="col-8">
-      <span>Quiz: <span class="question-number">0</span>/10</span>
-      <span>Score: <span class="current-score">0</span></span>
-    </div>
+      <div>
+        <a href="index.html">
+        <img class="logo" src="images/Cat-logo.png" alt="Cat Head Logo"/>
+        </a>
+      </div>
+      <section>
+          <div class="quizCounter">
+              <!--score and question counter section-->
+              <div class="counter">
+                  <!--question counter-->
+                  <span class="questionCount">Question: <span class="questionNumber">0</span>/10</span>
+              </div>
+              <div class="counter">
+                  <!--score counter-->
+                  <span class="scoreCount">Score: <span class="currentScore">0</span></span>
+              </div>
+          </div>
+      </section>
     </header>
     <main role="main">
-      <div class="start-page">
+      <div class="startPage">
         <h1>Cat Facts Quiz App</h1>
-        <button type="button" class="start-button">Start Right Meow!</button>
+        <button type="button" class="startButton">Start Right Meow!</button>
       </div>
-      <div class="quiz-form">
+      <div class="quizForm">
       <!-- Question Page -->
-        <div class="question-1">
+        <!-- <div class="question-1">
           <h2>What is the proper term for a group of kittens?</h2>
           <form>
             <fieldset>
@@ -49,9 +59,9 @@
               <button type="submit" class="submit-button">Submit</button>
             </fieldset>
           </form>
-        </div>
+        </div> -->
       <!-- Feedback Pages -->
-        <section class="feedback-page">
+        <!-- <section class="feedback-page">
           <h2>Purr-fect!</h2>
           <img src="images/success_cat.jpg" alt="Happy cat with eyes closed laying on a blanket">
           <button class="next-button">Fur-ward</button>
@@ -60,15 +70,16 @@
           <h2>You have cat to be kitten me right meow! The correct answer was C</h2>
           <img src="images/wrong_cat_1.jpg" alt="Hissing black cat">
           <button class="next-button">Fur-ward</button>
-        </section>
+        </section> -->
       <!-- Results Page -->
-        <section class="final-page">
+        <!-- <section class="final-page">
           <h2>Final Score: 5 out of 10</h2>
           <p>It’s meow or never!</p>
           <button class="restart-button">Play Again?</button>
         </section>
+        -->
       </div>
-    </main>
+    </main> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="datastore.js"></script>
     <script src="index.js"></script>
