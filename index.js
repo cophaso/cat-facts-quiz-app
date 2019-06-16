@@ -12,7 +12,6 @@ function startQuiz() {
 }
 
 function generateQuiz() {
-  if (questionNumber < STORE.length) {
     return `
     <form>
     <div class="question-${questionNumber}">
@@ -38,11 +37,6 @@ function generateQuiz() {
     </fieldset>
     </div>
     </form>`;
-} else {
-    renderScorePage();
-    restartQuiz();
-    $('.questionNumber').text(10)
-  }
 }
 
 function renderQuestion() {
@@ -91,18 +85,15 @@ function generateFeedback(){
     }
 }
 
-function updateScore() {
-  changeScore();
-  $('.score').text(score);
-}
-
 function renderNextQuestion() {
   $('.quizForm').on('click', '.nextButton', function(event){
     event.preventDefault();
-    if (questionNumber >= 10){
+    if (questionNumber === 10){
+      console.log(questionNumber);
       renderScorePage();
     }
     else {
+      console.log('im here');
       renderQuestion();
       incrementQuestionNum();
     }
@@ -110,8 +101,8 @@ function renderNextQuestion() {
 }
 
 function renderScorePage(){
-  $('quizForm').html(`<section class="final-page">
-  <h2>Final Score: $('.currentScore').text(score) out of 10</h2>
+  $('.quizForm').html(`<section class="final-page">
+  <h2>Final Score: ${score} out of 10</h2>
   <p>It’s meow or never!</p>
   <button class="restartButton">Play Again?</button>
 </section>`)
@@ -123,12 +114,12 @@ function restartQuiz() {
   });
 }
 
-
 //run quiz functions
 function createQuiz() {
   startQuiz();
   selectAnswer();
   renderNextQuestion();
+  restartQuiz();
 }
 
 $(createQuiz);
