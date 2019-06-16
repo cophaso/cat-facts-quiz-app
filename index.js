@@ -1,8 +1,6 @@
-//set counts to 0
 let questionNumber = 0;
 let score = 0;
 
-//removes the start page and increments question number
 function startQuiz() {
   $('form').submit(function (event) {
     event.preventDefault();
@@ -69,7 +67,7 @@ function generateFeedback(){
       return `<form>
               <div class="feedback-page">
               <h2>Purr-fect! ${STORE[questionNumber-1].correct} is correct!</h2>
-              <img class="feedbackImage" src="images/success_cat.jpg" alt="Happy cat with eyes closed laying on a blanket">
+              <img class="feedbackImage" src="images/success_cat_1.jpg" alt="Happy cat with eyes closed laying on a blanket">
               <button type="submit" class="nextButton">Fur-ward</button>
               </div>
               </form>`;
@@ -79,7 +77,7 @@ function generateFeedback(){
               <section class="feedback-page">
               <h2>You have cat to be kitten me right meow! The correct answer was ${STORE[questionNumber-1].correct} </h2>
               <img class="feedbackImage" src="images/wrong_cat_1.jpg" alt="Hissing black cat">
-              <button type="submit" class="nextButton">Fur-ward</button>
+              <button type="submit" class="nextButton">Fur-ward -> </button>
               </section>
               </form>`
     }
@@ -89,11 +87,9 @@ function renderNextQuestion() {
   $('.quizForm').on('click', '.nextButton', function(event){
     event.preventDefault();
     if (questionNumber === 10){
-      console.log(questionNumber);
       renderScorePage();
     }
     else {
-      console.log('im here');
       renderQuestion();
       incrementQuestionNum();
     }
@@ -101,11 +97,23 @@ function renderNextQuestion() {
 }
 
 function renderScorePage(){
-  $('.quizForm').html(`<section class="final-page">
-  <h2>Final Score: ${score} out of 10</h2>
-  <p>It’s meow or never!</p>
-  <button class="restartButton">Play Again?</button>
-</section>`)
+  if(score >= 7){
+    $('.quizForm').html(`<section class="final-page">
+    <h2>Congratulations!</h2> 
+    <h2>Final score: ${score} out of 10</h2>
+    <img class="resultsImage" src="images/success_cat_2.jpg" alt="Human scratching the chin of a Brown striped cat with it's eyes closed">
+    <p>It’s meow or never!</p>
+    <button class="restartButton">Play Again?</button>
+    </section>`)
+  }
+  else{
+    $('.quizForm').html(`<section class="final-page">
+    <h2>Better luck next time! </h2> 
+    <h2>Final Score: ${score} out of 10</h2>
+    <img class="resultsImage" src="images/wrong_cat_2.jpg" alt="An orange kitten with a paw on it's head">
+    <button class="restartButton">Play Again?</button>
+    </section>`)
+  }
 }
 
 function restartQuiz() {
@@ -114,7 +122,6 @@ function restartQuiz() {
   });
 }
 
-//run quiz functions
 function createQuiz() {
   startQuiz();
   selectAnswer();
