@@ -11,8 +11,8 @@ const STORE = [
   },
   {
     question: 'How many hours do cats sleep in a day?',
-    answers: ['Garfield', 'Felix', 'Pistol Pete', 'The Aristocats'],
-    correct: 'Felix'
+    answers: ['1-2', '3-6', '8-12', '12-16'],
+    correct: '12-16'
   },
   {
     question: 'What is the smallest breed of cat?',

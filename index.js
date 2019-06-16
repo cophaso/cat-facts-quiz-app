@@ -68,7 +68,7 @@ function generateFeedback(){
               <div class="feedback-page">
               <h2>Purr-fect! ${STORE[questionNumber-1].correct} is correct!</h2>
               <img class="feedbackImage" src="images/success_cat_1.jpg" alt="Happy cat with eyes closed laying on a blanket">
-              <button type="submit" class="nextButton">Fur-ward</button>
+              <button type="submit" class="nextButton">Fur-ward -> </button>
               </div>
               </form>`;
     } 
@@ -102,7 +102,6 @@ function renderScorePage(){
     <h2>Congratulations!</h2> 
     <h2>Final score: ${score} out of 10</h2>
     <img class="resultsImage" src="images/success_cat_2.jpg" alt="Human scratching the chin of a Brown striped cat with it's eyes closed">
-    <p>It’s meow or never!</p>
     <button class="restartButton">Play Again?</button>
     </section>`)
   }
