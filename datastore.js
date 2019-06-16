@@ -1,7 +1,7 @@
 const STORE = [
   {
     question: 'What is the proper term for a group of kittens?',
-    answers: [Kindle, Kaboodle, Karat, Keel],
+    answers: ['Kindle', 'Kaboodle', 'Karat', 'Keel'],
     correct: 'Kindle'
   },
   {
@@ -43,5 +43,10 @@ const STORE = [
     question: 'Which of these foods is toxic to cats?',
     answers: ['Chocolate','Grapes','Onions','All of These'],
     correct: 'All of These'
+  },
+  {
+    question: 'What is the most popular cat breed?',
+    answers: ['Abyssinian', 'Siamese', 'Persian', 'Maine Coon'],
+    correct: 'Persian'
   }
 ]
